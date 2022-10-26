@@ -1,8 +1,8 @@
 const arrImages = [ '../consegna/img/01.jpg','../consegna/img/02.jpg','../consegna/img/03.jpg','../consegna/img/04.jpg', '../consegna/img/05.jpg',];
 
 const eleSlider = document.querySelector('.slider');
-const eleBtnLeft = document.querySelector('.btn-left');
-const eleBtnRight = document.querySelector('.btn-right');
+const eleBtnUp = document.querySelector('.btn-up');
+const eleBtnDown = document.querySelector('.btn-down');
 
 for (let i = 0; i < arrImages.length; i++) {
 	const eleImg = document.createElement('img');
@@ -19,26 +19,26 @@ for (let i = 0; i < arrImages.length; i++) {
 const indexImg = document.querySelectorAll('.slider-img'); 
 let activeIndex = 0;
 
-eleBtnRight.addEventListener('click', function () {
+eleBtnDown.addEventListener('click', function () {
 	indexImg[activeIndex].classList.remove('active');
 
 	activeIndex++;
 	indexImg[activeIndex].classList.add('active');
 
-	eleBtnLeft.classList.remove('invisible');
+	eleBtnUp.classList.remove('invisible');
 	if (activeIndex === indexImg.length - 1) {
-		eleBtnRight.classList.add('invisible');
+		eleBtnDown.classList.add('invisible');
 	}
 });
 
-eleBtnLeft.addEventListener('click', function () {
+eleBtnUp.addEventListener('click', function () {
 	indexImg[activeIndex].classList.remove('active');
 
 	activeIndex--;
 	indexImg[activeIndex].classList.add('active');
 
-	eleBtnRight.classList.remove('invisible');
+	eleBtnDown.classList.remove('invisible');
 	if (!activeIndex) {
-		eleBtnLeft.classList.add('invisible');
+		eleBtnUp.classList.add('invisible');
 	}
 });

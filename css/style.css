@@ -29,7 +29,7 @@ body {
 	z-index: 10;
 }
 
-.btn-left, .btn-right {
+.btn-up, .btn-down{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -40,7 +40,7 @@ body {
 	background-color: white;
 }
 
-.btn-left:hover, .btn-right:hover {
+.btn-up:hover, .btn-down:hover {
 	background-color: lightblue;
 	cursor: pointer;
 }
