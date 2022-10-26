@@ -55,7 +55,7 @@ body {
 	object-position: center;
 }
 
-.active {
+.visible {
 	display: block;
 }
 
