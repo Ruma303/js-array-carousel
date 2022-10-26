@@ -16,29 +16,31 @@ for (let i = 0; i < arrImages.length; i++) {
 	eleSlider.append(eleImg);
 }
 
-const indexImg = document.querySelectorAll('.slider-img'); 
+let indexImg = document.querySelectorAll('.slider-img'); 
 let visibleIndex = 0;
 
 eleBtnDown.addEventListener('click', function () {
     //se l'index arriva al numero massimo dell'array, riportalo al min
-    if (indexImg[visibleIndex] == arrImages.length){
+    if (indexImg[visibleIndex] == arrImages.length -1){
         indexImg[visibleIndex] = 0;
     } // se l'index arriva al numero minimo dell'array, riportalo al max
     else if (indexImg[visibleIndex] < 0) {
-        indexImg[visibleIndex] = arrImages.length;
+        indexImg[visibleIndex] = arrImages.length -1;
     }
+    indexImg[visibleIndex].classList.remove('visible');
 	visibleIndex++;
 	indexImg[visibleIndex].classList.add('visible');
 });
 
 eleBtnUp.addEventListener('click', function () {
     //se l'index arriva al numero massimo dell'array, riportalo al min
-    if (indexImg[visibleIndex] == arrImages.length){
+    if (indexImg[visibleIndex] == arrImages.length -1){
         indexImg[visibleIndex] = 0;
     } // se l'index arriva al numero minimo dell'array, riportalo al max
     else if (indexImg[visibleIndex] < 0) {
-        indexImg[visibleIndex] = arrImages.length;
+        indexImg[visibleIndex] = arrImages.length -1;
     }
+    indexImg[visibleIndex].classList.remove('visible');
 	visibleIndex--;
 	indexImg[visibleIndex].classList.add('visible');
 
